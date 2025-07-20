@@ -31,6 +31,18 @@ pip install pandas openpyxl
 
 ## Usage
 
+#### Show all CLI options
+
+To see all available command-line options and usage instructions, run:
+
+```bash
+python cli.py -h
+```
+or
+```bash
+python cli.py --help
+```
+
 ### Command Line Interface
 
 Basic usage:
@@ -137,6 +149,24 @@ Optional dependencies:
 3. Make your changes
 4. Add tests if applicable
 5. Submit a pull request
+
+## CLI vs Exporter: What's the Difference?
+
+**CLI (`cli.py`)**
+
+- The command-line interface is the main entry point for end users who want to quickly parse and export Nessus scan results without writing any code.
+- It provides a set of command-line options for specifying the input file, output format, filtering options, and more.
+- The CLI handles argument parsing, file validation, logging, and calls the parser and exporter modules under the hood.
+- Use the CLI if you want to automate Nessus parsing and exporting as part of a script, scheduled job, or manual workflow.
+
+**Exporter (`exporter.py`)**
+
+- The exporter is a Python module that provides programmatic access to export functionality.
+- It is designed for developers who want to integrate Nessus parsing and exporting into their own Python applications or workflows.
+- The exporter takes parsed scan data (from the parser) and can output it in JSON, CSV, or Excel formats.
+- Use the exporter if you want to build custom tools, automate reporting, or further process Nessus data in Python code.
+
+In summary: **Use the CLI for quick, user-friendly command-line operations. Use the exporter module for advanced, programmatic access in your own Python scripts.**
 
 ## License
 
